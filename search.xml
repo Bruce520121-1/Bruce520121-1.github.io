@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>设置-SSH-使用-hexo-deploy-时免输用户名密码</title>
+      <link href="2021/05/03/%E8%AE%BE%E7%BD%AE-SSH-%E4%BD%BF%E7%94%A8-hexo-deploy-%E6%97%B6%E5%85%8D%E8%BE%93%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/"/>
+      <url>2021/05/03/%E8%AE%BE%E7%BD%AE-SSH-%E4%BD%BF%E7%94%A8-hexo-deploy-%E6%97%B6%E5%85%8D%E8%BE%93%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<p>此篇博客日期2021-05-03，亲测可用。本文主要用于Hexo和GitHub搭建的个人博客上传本地修改至GitHub远端仓库时，多次输入github用户名和密码问题。SSH 验证就是我们在用<code>Git Bash Here</code>键入命令 <code>hexo d&#39;</code>以后，在提交内容的过程中会弹出的一个小窗口提示我们输入github的用户名、密码。我参考了网上的一些教程，现在给出完整可行的教程，let’s do it！ </p><h3 id="生成SSH密钥"><a href="#生成SSH密钥" class="headerlink" title="生成SSH密钥"></a>生成SSH密钥</h3><p> 具体可参考如下操作： <a href="https://blog.csdn.net/weixin_44291453/article/details/106763561">https://blog.csdn.net/weixin_44291453/article/details/106763561</a> </p><h3 id="设置-Github-项目的-Deploy-keys"><a href="#设置-Github-项目的-Deploy-keys" class="headerlink" title="设置 Github 项目的 Deploy keys"></a>设置 Github 项目的 Deploy keys</h3><p>打开<code>_config.yml</code>文件,复制<code>SSH</code>中的链接到<code>depoly</code>，如下图。</p><p><img src="/2021/05/03/%E8%AE%BE%E7%BD%AE-SSH-%E4%BD%BF%E7%94%A8-hexo-deploy-%E6%97%B6%E5%85%8D%E8%BE%93%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/1.png" alt=" "></p><p><img src="/2021/05/03/%E8%AE%BE%E7%BD%AE-SSH-%E4%BD%BF%E7%94%A8-hexo-deploy-%E6%97%B6%E5%85%8D%E8%BE%93%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/2.png" alt=" "></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="2021/05/02/hello-world/"/>
+      <url>2021/05/02/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>

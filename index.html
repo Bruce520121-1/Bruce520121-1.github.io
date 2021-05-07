@@ -215,7 +215,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-05-07 19:59:54 / 修改时间：20:13:53" itemprop="dateCreated datePublished" datetime="2021-05-07T19:59:54+08:00">2021-05-07</time>
+              <time title="创建时间：2021-05-07 19:59:54 / 修改时间：20:42:58" itemprop="dateCreated datePublished" datetime="2021-05-07T19:59:54+08:00">2021-05-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -233,7 +233,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -254,26 +254,19 @@
       
           <h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1.问题描述"></a>1.问题描述</h3><p>我们先看一下永久链接 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks.html">（Permalinks）</a> 的解释 ，设置永久链接的一般教程如下：</p>
 <p><img src="/2021/05/07/hexo-github%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%9C%A8%E6%96%87%E7%AB%A0%E4%B8%8A%E4%BC%A0%E5%90%8E%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA/4.png" alt=" "></p>
-<p>当然设置永久链接的好处之一就是（我知道的），<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>之后，可以通过版权处链接直接访问你的文章。</p>
+<p>当然设置永久链接的好处之一就是（我知道的），<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>之后，可以通过版权处链接直接访问你的文章，并且防止链接中出现中文字而乱码。</p>
 <p><img src="/2021/05/07/hexo-github%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%9C%A8%E6%96%87%E7%AB%A0%E4%B8%8A%E4%BC%A0%E5%90%8E%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA/3.png" alt=" "></p>
 <p>然而，这样设置之后，却会导致文章图片不能显示。</p>
 <p><img src="/2021/05/07/hexo-github%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%9C%A8%E6%96%87%E7%AB%A0%E4%B8%8A%E4%BC%A0%E5%90%8E%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA/5.png" alt="5"></p>
 <h3 id="2-问题解决"><a href="#2-问题解决" class="headerlink" title="2.问题解决"></a>2.问题解决</h3><p>打开 站点的<code>_config.yml</code> ，找到<code>permalink: </code>,修改如下：</p>
-<blockquote>
-<p>permalink: :year/:month/:day/:urlname/ </p>
-<p>当没有urlname时显示什么,写上 :title 也没有用，会作为字符串处理</p>
-<p>permalink_defaults:</p>
-<p>​    urlname: index </p>
-</blockquote>
+<figure class="highlight plain"><figcaption><span>:year/:month/:day/:urlname/</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:urlname&#x2F;</span><br><span class="line">&#x2F;&#x2F;当没有urlname时显示什么,写上 :title 也没有用，会作为字符串处理</span><br><span class="line">permalink_defaults:</span><br><span class="line">	urlname: index </span><br></pre></td></tr></table></figure>
+
 <p>此外还需要修改博客文章模板，打开在站点根目录下打开 sacaffolds/post.md 里面添加字段 </p>
 <p><code>urlname: </code>,添加后的结果如下：</p>
-<blockquote>
-<hr>
-<p>title: hexo-github搭建的博客在文章上传后图片不显示<br>urlname:<br>date: 1620388794000<br>tags:<br>category:</p>
-</blockquote>
-<hr>
-<p>方便我们每次新建时，在文章的 Front-matter(首部) 及时填写 <code>urlname：</code>。</p>
-<p>例如使用  <code>hexo n 设置-SSH-使用-hexo-deploy-时免输用户名密码</code> 命令， 填写新建文章的Front-matter 如下：</p>
+<figure class="highlight plain"><figcaption><span>&#123;&#123; title &#125;&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">categories:</span><br><span class="line">tags:</span><br><span class="line">urlname: </span><br><span class="line">abbrlink:</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>方便我们每次新建文章时，在文章的 Front-matter(首部) 及时填写 <code>urlname：</code>。</p>
+<p>例如：使用  <code>hexo n 设置-SSH-使用-hexo-deploy-时免输用户名密码</code> 命令， 填写新建文章的Front-matter 如下：</p>
 <blockquote>
 <p>title: 设置-SSH-使用-hexo-deploy-时免输用户名密码<br>categories:</p>
 <ul>
@@ -281,13 +274,13 @@
 <li>hexo<br>urlname: 设置-SSH-使用-hexo-deploy-时免输用户名密码<br>abbrlink: 963<br>date: 2021-05-03 23:41:14</li>
 </ul>
 </blockquote>
-<p><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>之后，就可以通过版权处链接直接访问你的文章，且文章链接不会因为有汉字而出现乱码，如下所示：</p>
+<p><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>之后，就可以通过版权处链接直接访问你的文章，且文章链接不会因为有中文而出现乱码，如下所示：</p>
 <p><img src="/2021/05/07/hexo-github%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%9C%A8%E6%96%87%E7%AB%A0%E4%B8%8A%E4%BC%A0%E5%90%8E%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA/3.png" alt=" "></p>
 <h3 id="3-对于图片不显示的其他问题"><a href="#3-对于图片不显示的其他问题" class="headerlink" title="3.对于图片不显示的其他问题"></a>3.对于图片不显示的其他问题</h3><p> <a target="_blank" rel="noopener" href="https://blog.csdn.net/androidV/article/details/105781570">(2条消息) hexo 插入图片 失败的解决方案_jiaway的博客-CSDN博客</a> </p>
 <p> <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44875386/article/details/105510258?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-1&spm=1001.2101.3001.4242">(2条消息) 使用插件后hexo添加本地图片依然出错的解决方法_秋千坠everlasting的博客-CSDN博客</a> </p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文汇总了基于hexo-github 搭建的博客在上传文章时，图片不显示的问题的所有解决方案。</p>
 <h4 id="文章参考"><a href="#文章参考" class="headerlink" title="文章参考"></a>文章参考</h4><p>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35396510/article/details/105953460?ops_request_misc=%7B%22request_id%22:%22162035042016780271548326%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=162035042016780271548326&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~hot_rank-23-105953460.first_rank_v2_pc_rank_v29&utm_term=Hexo+NexT5%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87">(2条消息) hexo 主题 next7.8 版本配置美化_uKnow_AL的博客-CSDN博客</a> </p>
-<p>2.[(2条消息) hexo permalink设置技巧_jingbin_的博客-CSDN博客](<a target="_blank" rel="noopener" href="https://blog.csdn.net/jingbin_/article/details/80617210?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=">https://blog.csdn.net/jingbin_/article/details/80617210?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=</a> 博客文章图片不显示 permalink &amp;utm_medium=distribute.pc_search_result.none-task-blog-2<del>all</del>sobaiduweb~default-6-80617210.first_rank_v2_pc_rank_v29&amp;spm=1018.2226.3001.4187) </p>
+<p>2.<a target="_blank" rel="noopener" href="https://blog.csdn.net/jingbin_/article/details/80617210?ops_request_misc=&request_id=&biz_id=102&utm_term=">(2条消息) hexo permalink设置技巧_jingbin_的博客-CSDN博客</a>  </p>
 
       
     </div>

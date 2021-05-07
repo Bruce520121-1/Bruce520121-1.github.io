@@ -215,7 +215,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-05-07 19:59:54 / 修改时间：21:04:02" itemprop="dateCreated datePublished" datetime="2021-05-07T19:59:54+08:00">2021-05-07</time>
+              <time title="创建时间：2021-05-07 19:59:54 / 修改时间：21:08:27" itemprop="dateCreated datePublished" datetime="2021-05-07T19:59:54+08:00">2021-05-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,13 +252,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1.问题描述"></a>1.问题描述</h3><p>我们先看一下永久链接 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks.html">（Permalinks）</a> 的解释 ，设置永久链接的一般教程如下：</p>
+          <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>我们先看一下永久链接 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks.html">（Permalinks）</a> 的解释 ，设置永久链接的一般教程如下：</p>
 <p><img src="/2021/05/07/hexo-github%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%9C%A8%E6%96%87%E7%AB%A0%E4%B8%8A%E4%BC%A0%E5%90%8E%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA/4.png" alt=" "></p>
 <p>当然设置永久链接的好处之一就是（我知道的），<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>之后，可以通过版权处链接直接访问你的文章，并且防止链接中出现中文字而乱码。</p>
 <p><img src="/2021/05/07/hexo-github%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%9C%A8%E6%96%87%E7%AB%A0%E4%B8%8A%E4%BC%A0%E5%90%8E%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA/3.png" alt=" "></p>
 <p>然而，这样设置之后，却会导致文章图片不能显示。</p>
 <p><img src="/2021/05/07/hexo-github%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%9C%A8%E6%96%87%E7%AB%A0%E4%B8%8A%E4%BC%A0%E5%90%8E%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA/5.png" alt="5"></p>
-<h3 id="2-问题解决"><a href="#2-问题解决" class="headerlink" title="2.问题解决"></a>2.问题解决</h3><p>打开 站点的<code>_config.yml</code> ，找到<code>permalink: </code>,修改如下：</p>
+<h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h3><p>打开 站点的<code>_config.yml</code> ，找到<code>permalink: </code>,修改如下：</p>
 <figure class="highlight plain"><figcaption><span>:year/:month/:day/:urlname/</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:urlname&#x2F;</span><br><span class="line">&#x2F;&#x2F;当没有urlname时显示什么,写上 :title 也没有用，会作为字符串处理</span><br><span class="line">permalink_defaults:</span><br><span class="line">	urlname: index </span><br></pre></td></tr></table></figure>
 
 <p>此外还需要修改博客文章模板，打开在站点根目录下打开 sacaffolds/post.md 里面添加字段 </p>

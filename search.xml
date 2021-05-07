@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>hexo-github搭建的博客在文章上传后图片不显</title>
+      <link href="2021/05/07/null/"/>
+      <url>2021/05/07/null/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>设置-SSH-使用-hexo-deploy-时免输用户名密码</title>
       <link href="2021/05/03/%E8%AE%BE%E7%BD%AE-SSH-%E4%BD%BF%E7%94%A8-hexo-deploy-%E6%97%B6%E5%85%8D%E8%BE%93%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/"/>
       <url>2021/05/03/%E8%AE%BE%E7%BD%AE-SSH-%E4%BD%BF%E7%94%A8-hexo-deploy-%E6%97%B6%E5%85%8D%E8%BE%93%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/</url>
@@ -13,9 +26,7 @@
       
       <categories>
           
-          <category> 网页设计 </category>
-          
-          <category> hexo-next-github </category>
+          <category> 网页搭建 </category>
           
       </categories>
       

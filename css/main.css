@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #bfcb87;
+  background: #49ffcb;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2276,7 +2276,7 @@ hr {
 }
 .content {
   padding-top: 80px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.5);
 }
 @media (max-width: 767px) {
   .content {
@@ -2476,6 +2476,7 @@ body {
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
+  background: url("../images/sidebar.jpg");
 }
 .sidebar a,
 .sidebar span.exturl {

@@ -921,16 +921,16 @@ pre .javascript .function {
 }
 .main-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 1000px;
 }
 @media (min-width: 1200px) {
   .main-inner {
-    width: 800px;
+    width: 1100px;
   }
 }
 @media (min-width: 1600px) {
   .main-inner {
-    width: 900px;
+    width: 1200px;
   }
 }
 @media (max-width: 767px) {
@@ -943,16 +943,16 @@ pre .javascript .function {
 }
 .header-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 1000px;
 }
 @media (min-width: 1200px) {
   .header-inner {
-    width: 800px;
+    width: 1100px;
   }
 }
 @media (min-width: 1600px) {
   .header-inner {
-    width: 900px;
+    width: 1200px;
   }
 }
 .site-brand-container {
@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #63ff98;
+  background: #c34eff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1383,16 +1383,16 @@ pre .javascript .function {
   box-sizing: border-box;
   margin: 0 auto;
   text-align: center;
-  width: 700px;
+  width: 1000px;
 }
 @media (min-width: 1200px) {
   .footer-inner {
-    width: 800px;
+    width: 1100px;
   }
 }
 @media (min-width: 1600px) {
   .footer-inner {
-    width: 900px;
+    width: 1200px;
   }
 }
 .languages {
@@ -2288,6 +2288,9 @@ hr {
     padding-top: 60px;
   }
 }
+.content-wrap {
+  width: calc(100% - 260px);
+}
 .pagination {
   margin: 120px 0 0;
   text-align: left;
@@ -2311,6 +2314,11 @@ hr {
 }
 .footer-inner {
   text-align: center;
+}
+.footer-inner p,
+.footer-inner span,
+.footer-inner a {
+  color: #000;
 }
 @media (max-width: 767px) {
   .footer-inner {
@@ -2422,7 +2430,7 @@ body {
 }
 .menu .menu-item .badge {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   color: #555;
   padding: 1px 4px;
   text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
@@ -2430,6 +2438,14 @@ body {
 .posts-expand.index .post-title,
 .posts-expand.index .post-meta {
   text-align: center;
+}
+.posts-expand.index .post-title p,
+.posts-expand.index .post-meta p,
+.posts-expand.index .post-title span,
+.posts-expand.index .post-meta span,
+.posts-expand.index .post-title a,
+.posts-expand.index .post-meta a {
+  color: #000;
 }
 @media (max-width: 767px) {
   .posts-expand.index .post-title,
@@ -2449,6 +2465,7 @@ body {
 .posts-expand .post-title,
 .posts-expand .post-meta {
   text-align: center;
+  color: #000;
 }
 .posts-expand .post-body img {
   margin-left: 0;
@@ -2503,7 +2520,7 @@ body {
 .sidebar a,
 .sidebar span.exturl {
   border-bottom-color: #555;
-  color: #999;
+  color: #000;
 }
 .sidebar a:hover,
 .sidebar span.exturl:hover {

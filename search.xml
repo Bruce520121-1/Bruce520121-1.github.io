@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>make的使用及Makefile文件的编写</title>
+      <link href="2021/07/17/make%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8AMakefile%E6%96%87%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99/"/>
+      <url>2021/07/17/make%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8AMakefile%E6%96%87%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99/</url>
+      
+        <content type="html"><![CDATA[<h4 id="make的好处"><a href="#make的好处" class="headerlink" title="make的好处"></a>make的好处</h4><p>1.自动化编译</p><p>2.避免不必要的重新编译</p><p>例如：</p><p>原来：</p><p>#gcc - c  *.c</p><p>#gcc main.o stu.o -o main -llist</p><p>现在：</p><p>#make</p><p>注：借助Makefile（makefile）</p><h4 id="make的执行过程："><a href="#make的执行过程：" class="headerlink" title="make的执行过程："></a>make的执行过程：</h4><p>1.找Makefile文件</p><p>2.第一目标文件为最终目标文件</p><p>3.查目标文件存不存在，不存在下一步</p><p>4.根据第一目标文件的依赖文件向下查找，并判断依赖文件是否为最新（根据创建时间）是否为最新。</p><p>5.编译</p><h4 id="Makefile文件编写：如何编写源文件并链接成可执行文件"><a href="#Makefile文件编写：如何编写源文件并链接成可执行文件" class="headerlink" title="Makefile文件编写：如何编写源文件并链接成可执行文件"></a>Makefile文件编写：如何编写源文件并链接成可执行文件</h4><hr><p>TARGET …:DEPENDENCIES</p><p>COMMAND</p><hr><p>目标文件（TARGET）程序产生的文件，如可执行文件和目标文件，目标文件也可以是要执行的动作，如伪文件 clean install all</p><p>依赖文件（DEPENDENCIES）是用来产生目标文件的输入文件，一个目标文件通常需要多个依赖文件</p><p>命令（COMMAND）是make执行的动作，可以有多个命令，每个命令占一行，且起始位置为一个TAB字符</p><p><strong>1.Makefile伪目标：all clean install</strong></p><p><strong>2.Makefile自动化变量</strong> </p><p>$@ 规则的目标文件名</p><p>$&lt; 规则的第一依赖文件名</p><p>$^ 规则所有的依赖文件列表</p><p><strong>3.Makefile中使用变量</strong></p><p>objects=main.o sub.o</p><p>main: $(objects)</p><p><strong>4.make自动推导</strong></p><p>make“看到”.o文件会自动把.c加在依赖关系中，并且会自动推导gcc - c *.c</p><p>eg: $(objects):</p><p><strong>5.makefile常见函数</strong></p><p>wildcard函数：当前目录下匹配模式的文件</p><p>eg: src = $(wildcard *.c)</p><p>nodir函数：去除路径</p><p>eg：$(notdir $src)</p><p>patsubst函数：模式匹配替换，等价于$src(src:.c = .o)</p><p>eg: $src(patsubst %.c,%.o,$src)</p><p>shell函数</p><p>eg：src= $(shell  find *.c)</p><h3 id="多级目录的源文件Makefile文件编写示例"><a href="#多级目录的源文件Makefile文件编写示例" class="headerlink" title="多级目录的源文件Makefile文件编写示例"></a>多级目录的源文件Makefile文件编写示例</h3><h4 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h4><p><img src="/2021/07/17/make%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8AMakefile%E6%96%87%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99/%E6%96%B9%E6%B3%95%E4%B8%80.jpg"></p><h4 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h4><p><img src="/2021/07/17/make%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8AMakefile%E6%96%87%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99/%E6%96%B9%E6%B3%95%E4%BA%8C.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> makefile </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo-Next-Mist主题透明化以及背景图片的更改</title>
       <link href="2021/05/08/Hexo-Next-Mist%E4%B8%BB%E9%A2%98%E9%80%8F%E6%98%8E%E5%8C%96%E4%BB%A5%E5%8F%8A%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E6%9B%B4%E6%94%B9/"/>
       <url>2021/05/08/Hexo-Next-Mist%E4%B8%BB%E9%A2%98%E9%80%8F%E6%98%8E%E5%8C%96%E4%BB%A5%E5%8F%8A%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E6%9B%B4%E6%94%B9/</url>
